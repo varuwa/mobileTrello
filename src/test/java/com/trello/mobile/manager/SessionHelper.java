@@ -1,12 +1,13 @@
 package com.trello.mobile.manager;
 
+import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class SessionHelper extends HelperBase{
 
-    public SessionHelper(WebDriver wd) {
-        super(wd);
+    public SessionHelper(AppiumDriver driver) {
+        super(driver);
     }
 
     public void login(String userEmail, String password) {
@@ -16,14 +17,14 @@ public class SessionHelper extends HelperBase{
 
     }
     public void initLogin() {
-        waitForElementLocatedAndClick(By.cssSelector("[href='/login']"), 20);
+        click(By.id("log_in_button"));
     }
 
     public void fillLoginForm(String userEmail, String password) {
-        type(By.name("user"), userEmail);
-        type(By.name("password"), password);
+        type(By.id("user"), userEmail);
+        type(By.id("password"), password);
     }
     public void confirmLogin() {
-        waitForElementClickableAndClick(By.id("login"), 30);
+        click(By.id("authenticate"));
     }
 }
