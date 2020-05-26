@@ -36,4 +36,6 @@ public class SessionHelper extends HelperBase{
     public void confirmLogin() {
         click(By.id("authenticate"));
     }
+
+
 }

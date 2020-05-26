@@ -23,9 +23,11 @@ public class ApplicationManager {
 //    BoardHelper board;
 //    TeamHelper team;
     SessionHelper session;
+    WelcomePage welcome;
 //    ProfileHelper profile;
     String browser;
     Properties properties;
+
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -54,6 +56,7 @@ public class ApplicationManager {
 
         //driver.navigate().to(properties.getProperty("web.baseURL"));
 
+        welcome = new WelcomePage(driver);
         session = new SessionHelper(driver);
         //session.login(properties.getProperty("web.user"), properties.getProperty("web.password"));
 
@@ -83,6 +86,10 @@ public class ApplicationManager {
         return session;
     }
 
-//    public ProfileHelper getProfile(){ return profile;}
+    public WelcomePage getWelcome() {
+        return welcome;
+    }
+
+    //    public ProfileHelper getProfile(){ return profile;}
 
 }
