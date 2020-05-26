@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
     AppiumDriver driver;
     DesiredCapabilities capabilities;
-//    BoardHelper board;
+    BoardHelper board;
 //    TeamHelper team;
     SessionHelper session;
     WelcomePage welcome;
@@ -58,11 +58,12 @@ public class ApplicationManager {
 
         welcome = new WelcomePage(driver);
         session = new SessionHelper(driver);
+        //session.login("varuwa@gmail.com", "trellobarbara");
         //session.login(properties.getProperty("web.user"), properties.getProperty("web.password"));
 
         //new WebDriverWait(driver, 20).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[data-test-id=header-member-menu-button]")));
 
-//        board = new BoardHelper(wd);
+        board = new BoardHelper(driver);
 //        team = new TeamHelper(wd);
 //        profile = new ProfileHelper(wd);
 
@@ -88,6 +89,10 @@ public class ApplicationManager {
 
     public WelcomePage getWelcome() {
         return welcome;
+    }
+
+    public BoardHelper getBoard() {
+        return board;
     }
 
     //    public ProfileHelper getProfile(){ return profile;}

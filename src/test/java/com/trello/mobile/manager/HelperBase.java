@@ -51,6 +51,21 @@ public class HelperBase {
         action.press(PointOption.point(rightX, middleY)).moveTo(PointOption.point(leftX, middleY)).release().perform();
     }
 
+    public void swipeToRight(By locator){
+        TouchAction action = new TouchAction(driver);
+        WebElement element = driver.findElement(locator);
+
+        int leftX = (int) (element.getLocation().getX() * 0.2);
+        int rightX = (int) (leftX + element.getSize().getWidth() * 0.8);
+
+        int upperY = element.getLocation().getY();
+        int lowerY = upperY + element.getSize().getHeight();
+
+        int middleY = (upperY + lowerY)/2;
+
+        action.press(PointOption.point(leftX, middleY)).moveTo(PointOption.point(rightX, middleY)).release().perform();
+    }
+
     public void swipeUp(){
         Dimension size = driver.manage().window().getSize();
         TouchAction action = new TouchAction(driver);
@@ -76,7 +91,7 @@ public class HelperBase {
     }
 
     public boolean isElementPresent(By locator) {
-        return driver.findElements(locator).size() > 0; //тру или фолс, элемент есть или нет
+        return driver.findElements(locator).size() > 0;
     }
 
     public boolean waitForElementsPresent(By locator, int timeout){

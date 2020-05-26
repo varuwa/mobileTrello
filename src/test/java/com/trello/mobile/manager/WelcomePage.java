@@ -23,4 +23,9 @@ public class WelcomePage extends HelperBase {
     public void swipeWelcomePageToLeft() {
         swipeToLeft(By.xpath("//*[@resource-id='com.trello:id/view_pager']"));
     }
+
+    public void swipeWelcomePageToRight() {
+        swipeToRight(By.xpath("//*[@resource-id='com.trello:id/view_pager']"));
+    }
+
 }
