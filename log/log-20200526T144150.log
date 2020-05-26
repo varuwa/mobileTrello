@@ -1,0 +1,2 @@
+14:42:01.945 [main] INFO  c.t.m.manager.ApplicationManager - Ready!
+14:42:01.965 [main] INFO  com.trello.mobile.tests.TestBase - Start test getBoardsName with parameters: []
