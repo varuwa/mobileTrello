@@ -21,9 +21,18 @@ public class SessionHelper extends HelperBase{
     }
 
     public void fillLoginForm(String userEmail, String password) {
-        type(By.id("user"), userEmail);
+        typeEmail(userEmail);
+        typePassword(password);
+    }
+
+    private void typePassword(String password) {
         type(By.id("password"), password);
     }
+
+    private void typeEmail(String userEmail) {
+        type(By.id("user"), userEmail);
+    }
+
     public void confirmLogin() {
         click(By.id("authenticate"));
     }

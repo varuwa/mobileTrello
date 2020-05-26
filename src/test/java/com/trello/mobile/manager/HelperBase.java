@@ -2,15 +2,13 @@ package com.trello.mobile.manager;
 
 import com.google.common.io.Files;
 import io.appium.java_client.AppiumDriver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class HelperBase {
 
@@ -28,9 +26,7 @@ public class HelperBase {
         new WebDriverWait (driver, timeOut).until(ExpectedConditions.presenceOfElementLocated(locator)).click();
     }
 
-    public void waitForElementClickableAndClick(By locator, int timeOut) {
-        new WebDriverWait (driver, timeOut).until(ExpectedConditions.elementToBeClickable(locator)).click();
-    }
+
 
     public void type(By locator, String text) {
         if(text != null){
@@ -40,12 +36,25 @@ public class HelperBase {
         }
     }
 
+    public void waitForElementClickableAndClick(By locator, int timeOut) {
+        new WebDriverWait (driver, timeOut).until(ExpectedConditions.elementToBeClickable(locator)).click();
+    }
+
+    public void waitForElementLocatedAndType(By locator, String text, int timeout) {
+        new WebDriverWait(driver, timeout).until(ExpectedConditions.presenceOfElementLocated(locator)).sendKeys(text);
+    }
+
     public boolean checkPageUrl(String pageName){
         return new WebDriverWait(driver, 20).until(ExpectedConditions.urlContains(pageName));
     }
 
     public boolean isElementPresent(By locator) {
         return driver.findElements(locator).size() > 0; //тру или фолс, элемент есть или нет
+    }
+
+    public boolean waitForElementsPresent(By locator, int timeout){
+        List<WebElement> elements = new WebDriverWait(driver, timeout).until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+        return elements.size()>0;
     }
 
     public void returnToHomePage() throws InterruptedException {

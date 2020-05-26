@@ -1,4 +1,0 @@
-19:22:07.610 [main] INFO  c.t.m.manager.ApplicationManager - Ready!
-19:22:07.636 [main] INFO  com.trello.mobile.tests.TestBase - Start test testAppLaunched with parameters: []
-19:22:07.643 [main] INFO  com.trello.mobile.tests.TestBase - Stop test testAppLaunched
-19:22:07.956 [main] INFO  c.t.m.manager.ApplicationManager - Test finished
