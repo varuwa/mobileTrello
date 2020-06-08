@@ -1,0 +1,3 @@
+18:18:51.467 [main] INFO  c.t.m.manager.ApplicationManager - Ready!
+18:18:51.493 [main] INFO  com.trello.mobile.tests.TestBase - Start test swipeLeftAndRightPageTest with parameters: []
+18:19:03.821 [main] INFO  com.trello.mobile.tests.TestBase - Stop test swipeLeftAndRightPageTest

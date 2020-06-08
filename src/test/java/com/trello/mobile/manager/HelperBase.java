@@ -75,7 +75,7 @@ public class HelperBase {
         int startY = (int) (size.height*0.7);
         int stopY = (int) (size.height*0.2);
 
-        action.press(PointOption.point(middleX, startY)).moveTo(PointOption.point(middleX, stopY)).release().perform();
+        action.press(PointOption.point(middleX, startY)).waitAction().moveTo(PointOption.point(middleX, stopY)).release().perform();
     }
 
     public void waitForElementClickableAndClick(By locator, int timeOut) {

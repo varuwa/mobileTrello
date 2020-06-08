@@ -1,0 +1,3 @@
+11:14:02.066 [main] INFO  c.t.m.manager.ApplicationManager - Ready!
+11:14:02.088 [main] INFO  com.trello.mobile.tests.TestBase - Start test testLogin with parameters: []
+11:14:13.603 [main] INFO  com.trello.mobile.tests.TestBase - Stop test testLogin
